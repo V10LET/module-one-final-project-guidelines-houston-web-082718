@@ -20,23 +20,23 @@ def ready_for_chrimbus
     puts "That's alright! Plan or no plan, tis the Chrimbus Season! Come back soon!"
     exit
   else
-    puts "What a magical day! Let's get started!"
+    puts "What a magical day! Let's get started...".colorize(:cyan)
   end
 end
 
 # Menu of options.
 def menu_options
-  puts "1 - Add friend!"
-  puts "2 - Add new gift!"
-  puts "3 - Give a gift to friend!"
-  puts "4 - Delete a friend."
-  puts "5 - Delete a gift."
-  puts "6 - Change a friend's name."
-  puts "7 - Edit a gift's info."
-  puts "8 - See all my friends!"
-  puts "9 - See all my gifts!"
-  puts "10 - See what I'm giving each friend!"
-  puts "11 - Retire from Chrimbus..."
+  puts "1 -" + " Add friend!".colorize(:green)
+  puts "2 -" + " Add new gift!"
+  puts "3 -" + " Give a gift to friend!".colorize(:green)
+  puts "4 -" + " Delete a friend."
+  puts "5 -" + " Delete a gift.".colorize(:green)
+  puts "6 -" + " Change a friend's name."
+  puts "7 -" + " Edit a gift's info.".colorize(:green)
+  puts "8 -" + " See all my friends!"
+  puts "9 -" + " See all my gifts!".colorize(:green)
+  puts "10 -" + " See what I'm giving each friend!"
+  puts "11 -" + " Retire from Chrimbus...".colorize(:red)
 end
 
 # Option 8 methods.

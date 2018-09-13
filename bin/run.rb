@@ -3,11 +3,11 @@ require_relative './helpers'
 require 'pry'
 
 # Welcome message
-puts "Ho Ho Ho! Please enter your name:"
+puts "Ho".colorize(:red) + " Ho".colorize(:green) + " Ho!".colorize(:red) + " Please enter your name:"
 name = gets.chomp
 snowman = find_or_create_snowman(name)
 
-puts "Merry *almost* Chrimbus, #{name}! Are you ready to start planning?"
+puts "Merry *almost*" + " Chrimbus".colorize(:red) + ", #{name}! Are you ready to start planning?"
 ready_for_chrimbus
 
 # Loop through CLI options.
@@ -18,10 +18,10 @@ until response == "11"
 
 # Add a friend to the database
   if response == "1"
-    puts "What is your friend's name?"
+    puts "What is your friend".colorize(:green) + "'s name?"
     name = gets.chomp
     create_friend(name, snowman)
-    puts "Your friend has been added to the nice list!"
+    puts "Your friend has been added" + "successfully!".colorize(:green)
     sleep 1
 
 # Add a new gift to the database
@@ -149,28 +149,28 @@ until response == "11"
       puts "Your new price, $#{new_price}, has been saved! Chrimbus continues!"
       sleep 2
     else
-      puts "Couldn't find what you wanted to change... Chrimbus is still upon us though! Let's try something else!"
+      puts "Couldn't find what you wanted to change...".colorize(:red) + " Chrimbus is still upon us though! Let's try something else!"
       sleep 2
       next
     end
 
   # Show a list of all freinds created.
   elsif response == "8"
-    if Friend.all == []
-      puts "Oops! You haven't added any friends yet. Let's do that first!"
+    if Friend.all.where(snowman: snowman) == []
+      puts "Oops! You haven't added any friends yet.".colorize(:red) + " Let's do that first!"
       sleep 1
       next
     else
       friend_arr = Friend.all.where(snowman_id: snowman.id).pluck(:name)
       i = 1
       num_arr = friend_arr.map { |friend_name|
-        str = "#{i}. #{friend_name.capitalize!}"
+        str = "#{i}." + " #{friend_name.capitalize!}".colorize(:green)
         i+=1
         str
       }
       final_arr = num_arr.join(", ")
       puts "Your Chrimbus pals: #{final_arr}"
-      puts "To go back to your options, press enter."
+      puts "To go back to your options," + " press enter.".colorize(:red)
       gets.chomp
       next
     end
@@ -181,14 +181,14 @@ until response == "11"
       price_arr = Gift.all.where(snowman_id: snowman.id).pluck(:price)
       gift_arr = Gift.all.where(snowman_id: snowman.id).pluck(:name)
       combine = gift_arr.zip(price_arr)
-      final_arr = combine.map { |pair| "#{pair[0]} for $#{pair[1]}" }
+      final_arr = combine.map { |pair| "#{pair[0]}".colorize(:green) + " for $#{pair[1]}" }
       final = final_arr.join(", ")
-    if Gift.all == []
-      puts "Oops! You haven't added any gifts yet. Let's do that first!"
-      sleep 2
+    if Gift.all.where(snowman: snowman) == []
+      puts "Oops! You haven't added any gifts yet.".colorize(:red) + " Let's do that first!"
+      sleep 1
     else
       puts "In your sleigh: #{final}!"
-      puts "To go back to your options, press enter."
+      puts "To go back to your options," + " press enter.".colorize(:red)
       gets.chomp
     end
   next
@@ -201,16 +201,16 @@ until response == "11"
           i+=1
           gift_arr = friend.gifts.map { |g| g.name }
           gift_arr = gift_arr.join(", ")
-          "#{i}. #{friend.name.capitalize!}'s Chrimbus: #{gift_arr}!"
+          "#{i}. #{friend.name.capitalize!}'s Chrimbus:" + " #{gift_arr}".colorize(:green) + "!"
         }
         binding.pry
       if list.length == 0
-        puts "Oops! It looks like you haven't given any gifts! Let's do that first."
+        puts "Oops! It looks like you haven't given any gifts!".colorize(:red) + " Let's do that first."
         sleep 2
       else
         list = list.join(", ")
         puts "#{list}"
-        puts "To go back to your options, press enter."
+        puts "To go back to your options," + " press enter.".colorize(:red)
         gets.chomp
       end
 
@@ -220,10 +220,10 @@ until response == "11"
     exit
 
   else
-    puts "Oops, that's not an option... Don't worry, Chrimbus will go on! Let's try again and pick a number."
+    puts "Oops, that's not an option...".colorize(:red) + " Don't worry, Chrimbus will go on! Let's try again and pick a number."
     sleep 2
     next
   end
 
-  puts "What would you like to do?"
+  puts "What would you like to do?".colorize(:cyan)
 end
