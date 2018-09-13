@@ -216,7 +216,7 @@ until response == "11"
 
   # Closing the program/ending the CLI.
   elsif response == "11"
-    # clear_chrimbus
+    chrimus_bush
     exit
 
   else
@@ -226,4 +226,5 @@ until response == "11"
   end
 
   puts "What would you like to do?".colorize(:cyan)
+  puts "***************"
 end

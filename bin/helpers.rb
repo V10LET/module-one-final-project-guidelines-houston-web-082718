@@ -47,3 +47,7 @@ end
 
 def option9
 end
+
+def chrimus_bush
+  ((1..20).to_a+[6]*4).each{|i|puts ('#'*i*2).center(80)};puts;puts ("Merry".colorize(:red) + " Chrimbus".colorize(:green)).center(108)
+end
