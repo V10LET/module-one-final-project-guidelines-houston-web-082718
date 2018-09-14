@@ -68,10 +68,10 @@ class Chrimbus
     gift_name = gets.chomp
     if gift_name.end_with?("s")
       puts ""
-      puts "How much do #{gift_name.capitalize} cost?"
+      puts "How much do #{gift_name} cost?"
     else
       puts ""
-      puts "How much does a #{gift_name.capitalize} cost?"
+      puts "How much does a #{gift_name} cost?"
     end
       price = gets.chomp
       clean_price = price.tr('^0-9\.', '')
@@ -79,10 +79,10 @@ class Chrimbus
       Gift.create(name: gift_name.downcase, price: clean_price, snowman_id: @snowman_id)
     if gift_name.end_with?("s")
       puts ""
-      puts "Your gift, #{gift_name.capitalize}, have been" + " saved ".colorize(:green) + "in the sleigh!"
+      puts "Your #{gift_name} have been" + " saved ".colorize(:green) + "in the sleigh!"
     else
       puts ""
-      puts "Your gift, #{gift_name.capitalize}, has been" + " saved ".colorize(:green) + "in the sleigh!"
+      puts "Your gift, #{gift_name}, has been" + " saved ".colorize(:green) + "in the sleigh!"
     end
       sleep 2
   end
@@ -217,12 +217,12 @@ class Chrimbus
     end
 
     puts ""
-    puts "Would you like to edit the " + "name".colorize(:red) + " or " + "price".colorize(:green) + " of #{gift_name.capitalize}?"
+    puts "Would you like to edit the " + "name".colorize(:red) + " or " + "price".colorize(:green) + " of #{gift_name}?"
     response = gets.chomp
 
     if response == "name"
       puts ""
-      puts "What would you like to " + "change the name".colorize(:green) + " of #{gift_name.capitalize} to?"
+      puts "What would you like to " + "change the name".colorize(:green) + " of #{gift_name} to?"
       new_name = gets.chomp
       gift.update(name: new_name.downcase, snowman_id: @snowman_id)
       puts ""
@@ -326,7 +326,10 @@ class Chrimbus
 
 # ----------> OPTION 11: Opt-out for user to exit program.
   def chrimus_bush
-    ((1..20).to_a+[6]*4).each{|i|puts ('#'*i*2).center(80)};puts;puts ("Merry".colorize(:red) + " Chrimbus".colorize(:green) + "!".colorize(:cyan)).center(122)
+    ((1..20).to_a+[6]*4).each{|i|
+      puts ('#'*i*2).center(80)};
+      puts;
+      puts ("Merry".colorize(:red) + " Chrimbus".colorize(:green) + "!".colorize(:cyan)).center(122)
     puts ""
   end
 
