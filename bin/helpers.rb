@@ -1,6 +1,3 @@
-def find_or_create_snowman(name)
-  Snowman.find_or_create_by(name: name)
-end
 
 def create_friend(name, snowman)
   Friend.create(name: name, snowman_id: snowman.id)
@@ -14,15 +11,7 @@ def create_gift(name, price, snowman)
   Gift.create(name: name, price: price, snowman_id: snowman.id )
 end
 
-def ready_for_chrimbus
-  answer = gets.chomp
-  if answer.starts_with?("n")
-    puts "That's alright! Plan or no plan, tis the Chrimbus Season! Come back soon!"
-    exit
-  else
-    puts "What a magical day! Let's get started...".colorize(:cyan)
-  end
-end
+
 
 # Menu of options.
 def menu_options
@@ -49,5 +38,10 @@ def option9
 end
 
 def chrimus_bush
-  ((1..20).to_a+[6]*4).each{|i|puts ('#'*i*2).center(80)};puts;puts ("Merry".colorize(:red) + " Chrimbus".colorize(:green)).center(108)
+  ((1..20).to_a+[6]*4).each{|i|puts ('#'*i*2).center(80)};puts;puts ("Merry".colorize(:red) + " Chrimbus".colorize(:green) + "!".colorize(:cyan)).center(122)
+  puts ""
+end
+
+def line_break
+  puts "*".colorize(:red) + "*".colorize(:green) + "*".colorize(:cyan) + "*".colorize(:red) + "*".colorize(:green) + "*".colorize(:cyan) + "*".colorize(:red) + "*".colorize(:green)
 end
