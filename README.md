@@ -1,40 +1,24 @@
-# Module One Final Project Guidelines
-
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
-
-For your final project, we'll be building a Command Line database application.
-
-## Project Requirements
-
-
-### Option Two - Command Line CRUD App
-
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have a minimum of three models.
-3. You should build out a CLI to give your user full CRUD ability for at least one of your resources. For example, build out a command line To-Do list. A user should be able to create a new to-do, see all todos, update a todo item, and delete a todo. Todos can be grouped into categories, so that a to-do has many categories and categories have many to-dos.
-4. Use good OO design patterns. You should have separate models for your runner and CLI interface.
-
-## Instructions
-
-1. Fork and clone this repository.
-2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
-3. Make sure to create a good README.md with a short description, install instructions, a contributors guide and a link to the license for your code.
-4. Make sure your project checks off each of the above requirements.
-5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
-    * The video should:
-      - Have an overview of your project.(2 minutes max)
-6. Prepare a presentation to follow your video.(3 minutes max)
-    * Your presentation should:
-      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      - Discuss 3 things you learned in the process of working on this project.
-      - Address, if anything, what you would change or add to what you have today?
-      - Present any code you would like to highlight.   
-7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
-
+# Chrimbus CRUD App
 ---
-### Common Questions:
-- How do I turn off my SQL logger?
-```ruby
-# in config/environment.rb add this line:
-ActiveRecord::Base.logger = nil
-```
+## Description
+Christmas, the most wonderful time of the year, was made that much more magical by Tim and Eric's tasteful Chrimbus Special.
+
+![Time and Eric Chrimbus Special](https://assets.mubi.com/images/film/125033/image-w1280.jpg?1477042553)
+
+As Chrimbus grows near, so does the anticipated annual anxiety. *What do I get? Who do I give to? How do I remember what to give whom?* This is where the Chrimbus CRUD App comes in.
+
+Saving your name, friends, gifts and Chrimbus, this app allows you to —
+1. Make a list of the friends you *want* to give to.
+2. Store gift ideas and their respective prices.
+3. Edit or delete friends or gifts — for all of your "friends".
+4. Assign gifts to your friends to see who you are giving what.
+
+All so that you can easily recall what, who and which gift with less stress and more Chrimbus cheer. And if you decide you want to keep giving next Chrimbus, all of your lists are saved and ready to refer back to at anytime.
+
+Although we cannot make Chrimbus a less awkward event, it never again has to be unplanned. Merry Chrimbus to all, and to all a strategic Chrimbus!
+
+## Install Instructions
+Installation is currently unavailable as a gem (*coming soon*) unless forked, cloned and ran directly from your terminal. Check back for updates on gem publication.
+<!-- This is a Ruby CLI app. In order to run the program, you will need to install several gems to get started. The gems have already been bundled for you in the Chrimbus CRUD App gemfile, so to install them you will need to -->
+
+View liscence [here]().
