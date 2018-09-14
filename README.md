@@ -21,4 +21,4 @@ Although we cannot make Chrimbus a less awkward event, it never again has to be 
 Installation is currently unavailable as a gem (*coming soon*) unless forked, cloned and ran directly from your terminal. Check back for updates on gem publication.
 <!-- This is a Ruby CLI app. In order to run the program, you will need to install several gems to get started. The gems have already been bundled for you in the Chrimbus CRUD App gemfile, so to install them you will need to -->
 
-View liscence [here]().
+View liscence [here](https://github.com/V10LET/chrimbus/blob/master/LICENSE.md).
